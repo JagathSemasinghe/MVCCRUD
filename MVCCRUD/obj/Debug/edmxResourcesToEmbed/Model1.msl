@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MVCCRUDDBModelStoreContainer" CdmEntityContainer="MVCCRUDDBContext">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="MVCCRUDDBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeFname" ColumnName="EmployeeFname" />
+          <ScalarProperty Name="EmployeeLname" ColumnName="EmployeeLname" />
+          <ScalarProperty Name="EmployeeMobile" ColumnName="EmployeeMobile" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="EmployeeSsn" ColumnName="EmployeeSsn" />
+          <ScalarProperty Name="EmployeeDateofbirth" ColumnName="EmployeeDateofbirth" />
+          <ScalarProperty Name="EmployeeAddress" ColumnName="EmployeeAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

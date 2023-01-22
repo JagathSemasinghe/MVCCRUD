@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @model IEnumerable<MVCCRUD.Employee>
+    <meta name="viewport">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+
+    <title>Index</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>MVC CRUD Application</h1>
+        <div class="table-1">
+
+            <h2> @Html.ActionLink("Add Employee", "Create")</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeFname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeLname)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeMobile)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeEmail)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeSsn)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeDateofbirth)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeAddress)
+                        </th>
+                        <th></th>
+                    </tr>
+
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td data-th="EmployeeFname">
+                                @Html.DisplayFor(modelItem => item.EmployeeFname)
+                            </td>
+                            <td data-th="EmployeeLname">
+                                @Html.DisplayFor(modelItem => item.EmployeeLname)
+                            </td>
+                            <td data-th="EmployeeMobile">
+                                @Html.DisplayFor(modelItem => item.EmployeeMobile)
+                            </td>
+                            <td data-th="EmployeeEmail">
+                                @Html.DisplayFor(modelItem => item.EmployeeEmail)
+                            </td>
+                            <td data-th="EmployeeSsn">
+                                @Html.DisplayFor(modelItem => item.EmployeeSsn)
+                            </td>
+                            <td data-th="EmployeeDateofbirth">
+                                @Html.DisplayFor(modelItem => item.EmployeeDateofbirth)
+                            </td>
+                            <td data-th="EmployeeAddress">
+                                @Html.DisplayFor(modelItem => item.EmployeeAddress)
+                            </td>
+                            <td data-th="Action">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) <br>
+                                @Html.ActionLink("Details", "Detail", new { id = item.EmployeeId }) <br>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
