@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCCRUD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,8 +15,7 @@ namespace MVCCRUD.Controllers
         MVCCRUDDBContext _context = new MVCCRUDDBContext();
         public ActionResult Index()
         {
-            var listofData = _context.Employees.ToList();
-            return View(listofData);
+            return View();
         }
         [HttpGet]
         public ActionResult Create ()
@@ -27,7 +27,7 @@ namespace MVCCRUD.Controllers
         {
             _context.Employees.Add(model);
             _context.SaveChanges();
-            ViewBag.Message = "Data Insert Successfully";
+             ViewBag.Message = "Data Insert Successfully";
             return RedirectToAction("index");
         }
         [HttpGet]
@@ -65,6 +65,11 @@ namespace MVCCRUD.Controllers
             _context.SaveChanges();
             ViewBag.Message = "Record Delete Successfully";
             return RedirectToAction("index");
+        }
+
+        public string OpenPopup()
+        {
+            return ("Detail"); ;
         }
     }
 }

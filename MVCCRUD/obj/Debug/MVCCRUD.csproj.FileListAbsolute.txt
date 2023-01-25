@@ -81,3 +81,7 @@ C:\MVC CRUD\MVCCRUD\MVCCRUD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatfo
 C:\MVC CRUD\MVCCRUD\MVCCRUD\obj\Debug\MVCCRUD.csproj.CopyComplete
 C:\MVC CRUD\MVCCRUD\MVCCRUD\obj\Debug\MVCCRUD.dll
 C:\MVC CRUD\MVCCRUD\MVCCRUD\obj\Debug\MVCCRUD.pdb
+C:\MVC CRUD\MVCCRUD\MVCCRUD\bin\PagedList.dll
+C:\MVC CRUD\MVCCRUD\MVCCRUD\bin\PagedList.Mvc.dll
+C:\MVC CRUD\MVCCRUD\MVCCRUD\bin\PagedList.xml
+C:\MVC CRUD\MVCCRUD\MVCCRUD\bin\PagedList.Mvc.xml

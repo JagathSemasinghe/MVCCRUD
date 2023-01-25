@@ -1,18 +1,25 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model PagedList.IPagedList<Vag_Infotech.Models.Persons>
+@using PagedList.Mvc;
+
+@model IEnumerable<MVCCRUD.Employee>
+
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    @model IEnumerable<MVCCRUD.Employee>
+
     <meta name="viewport">
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
 
     <title>Index</title>
+    <script type="text/javascript">
+        ShowPopup = function () {
+            window.open('/Home/OpenPopup', "PopupWindow", 'width=400px,height=400px,top=150,left=250');
+        }
+    </script>
+
 </head>
 
 <body>
@@ -75,7 +82,7 @@
                             </td>
                             <td data-th="Action">
                                 @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId }) <br>
-                                @Html.ActionLink("Details", "Detail", new { id = item.EmployeeId }) <br>
+                                <input type="button" id="btnpopu" value="Details" onclick="ShowPopup();" />
                                 @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId })
                             </td>
                         </tr>
@@ -84,5 +91,14 @@
             </table>
         </div>
     </div>
+
+
 </body>
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, Page_No => Url.Action("Index",
+    new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
+
+
+
 </html>
